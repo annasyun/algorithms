@@ -9,8 +9,5 @@ function solution(numbers) {
         }
     }
     console.log(newArr);
-    // answer = Math.max(...newArr);
-    // console.log(answer);
-    console.log(newArr);
     return Math.max(...newArr);
 }
