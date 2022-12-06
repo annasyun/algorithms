@@ -1,11 +1,12 @@
 function solution(i,j,k){
-    let result = '';
+    let result = 0;
     for(i; i<=j; i++){
-        result += String(i)
+        let str =  '' + i
+        let arr = str.split('')
+        let test = arr.filter(v => v.includes(k))
+        result += test.length
     }
-    return result.split(k).length-1
-}
 
-console.log(solution(1,13,1))
-console.log(solution(10,50,5))
-console.log(solution(3,10,2))
+    return result
+
+}
