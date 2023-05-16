@@ -1,18 +1,20 @@
 function solution(s) {
-    const ansArr=[];
-    const sArr=s.split('').sort();
+  const count = {};
+  
+  for (let char of s) {
+    count[char] = count[char] ? count[char] + 1 : 1;
+  }
+ 
     
-    for(let i=0;i<sArr.length;i++){
-            let count = 0;
-        for(let j=0;j<sArr.length;j++){
-         if (sArr[i]==sArr[j]){
-             count++
-         }
-            
-        }
-        if(count==1){
-            ansArr.push(sArr[i]);
-        }
+  const uniqueChars = [];
+  
+  for (let char in count) {
+    if (count[char] === 1) {
+      uniqueChars.push(char);
     }
-    return ansArr.join('');
+  }
+  
+  uniqueChars.sort();
+  
+  return uniqueChars.join('');
 }
